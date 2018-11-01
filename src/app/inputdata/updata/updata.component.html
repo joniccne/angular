@@ -1,0 +1,39 @@
+<div class="col">
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Updata</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button class="dropdown-item" (click)="upGlobalAir()">Air global</button>
+      <button class="dropdown-item" (click)="upPowerbuyAir()">Air Power</button>
+      <button class="dropdown-item" (click)="check()">Check</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg3 col-md-3 " *ngFor="let item of inputupAir">
+    <div class="card">
+      <div class="card-body">
+        <h6> <strong>{{item.name}}</strong> </h6>
+          <h5> <strong> {{item.price}} </strong></h5>
+          <button  class="btn btn-outline-danger btn-block" (click)="updates(item)" >EditData </button>
+          <button *ngIf="State && itemid != null" class="btn btn-outline-danger btn-block" (click)="clearState()">
+              <i class="fa fa-angle-double-up "></i>
+          </button>
+          <div *ngIf="State && itemid != null">
+            <form>
+                <table  class="table">
+                    <tbody *ngFor="let ninew of itemid  " >
+                      <tr>
+                          <!-- <td>{{ninew.id}}</td>
+                          <td>{{ninew.name}}</td> -->
+                          <td>{{ninew.price}}</td>
+                          <td><input type="submit" value="Submit" (click)="update(ninew)"  class="btn"></td>                  
+                      </tr>
+                    </tbody>
+                </table>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  

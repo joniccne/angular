@@ -1,0 +1,14 @@
+.cardP {
+    /* box-shadow: -5px 2px 2px grey; */
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.6), 0 15px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+  .imgproduct {
+    width: 175px;
+    height: 175px;
+    display: block;
+    margin: auto;
+  }
+
+  .ninew{
+    display: block;
+  }

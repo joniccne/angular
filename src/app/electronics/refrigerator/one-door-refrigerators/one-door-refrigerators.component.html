@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-3 col-sm-3" *ngFor="let itemsp of BestPrice ">
+    <div class="card cardP">
+      <div class="card-body">
+        <img class="imgproduct " (click)="onClicks(itemsp[0].keyid,itemsp[0].img)" src={{itemsp[0].img}}>
+        <h6 class="Sname" (click)="onClicks(itemsp[0].keyid,itemsp[0].img)">
+          <strong>{{itemsp[0].name}}</strong>
+        </h6>
+        <h5 class=" Sprice" (click)="onClicks(itemsp[0].keyid,itemsp[0].img)">
+          <strong>
+            <i class="fa fa-money-bill Solid1"></i> {{itemsp[0].price}}</strong>
+        </h5>
+        <h5 (click)="onClicks(itemsp[0].keyid,itemsp[0].img)" class=" Sstore">
+          <i class="fa fa-map-marker Solid2"></i>
+          <img src={{itemsp[0].store}}>
+        </h5>
+        <div (click)="onClicks(itemsp[0].keyid,itemsp[0].img)" class="line">
+          <h5 class="Sleng">
+            <strong>จำนวนร้าน  {{itemsp[0].leng}}  <i *ngIf="itemsp[0].leng >=2 " class="fa fa-chevron-circle-down Istore "> </i></strong> 
+            <img *ngIf="itemsp[0].leng >=2 " class="imgpriceStore" src="../../../assets/images/sela.jpg">
+            <strong *ngIf="itemsp[0].leng >=2 " class="SpriceStore"> {{itemsp[0].priceStore}}</strong>
+          </h5>
+        </div>
+        <i *ngIf="State && pnames[0].keyid == itemsp[0].keyid" class="fa fa-chevron-circle-up Istore " (click)="clearState()">
+        </i>
+        <div *ngIf="State && pnames[0].keyid == itemsp[0].keyid">
+          <form>
+            <table class="table">
+              <tbody *ngFor="let product of pnames">
+                <tr>
+                  <td>
+                    <h4>
+                      <img src={{product.store}}>
+                    </h4>
+                  </td>
+                  <td class="price-new">
+                    <h5>
+                      <i class="fa fa-money-bill Solid"></i>
+                      <strong> {{product.price}}</strong>
+                    </h5>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

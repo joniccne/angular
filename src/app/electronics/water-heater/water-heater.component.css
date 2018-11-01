@@ -1,0 +1,114 @@
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+.Sname {
+  /* font-size: 16px; */
+  color: black;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-size: 0.8em;
+  /* line-height:1em; */
+  /* height:0.5em; */
+  /* padding: 10px 4px; */
+  /* text-align:left; */
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.Sprice {
+  font-size: 25px;
+  color: goldenrod;
+  text-align: right;
+}
+.Iprice {
+  font-size: 20px;
+  color: goldenrod;
+}
+.Sstore {
+  font-size: 15px;
+  color: blue;
+  text-align: right;
+}
+.Sleng {
+  font-size: 12px;
+  color: black;
+  text-align: left;
+}
+.SpriceStore {
+  font-size: 12px;
+  color: red;
+  text-align: right;
+}
+.imgpriceStore {
+  /* width: 10px; */
+  height: 18px;
+  text-align: left;
+}
+.Istore {
+  font-size: 18px;
+  color: red;
+}
+
+.Simg {
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  text-align: center;
+}
+.storeimg {
+  width: 100px;
+  height: 64px;
+  overflow: hidden;
+  text-align: center;
+}
+.name {
+  color: black;
+  font-size: 0.5em;
+}
+.price {
+  overflow: hidden;
+  /* text-align: right; */
+  /* width: 30px;
+  height: 30px; */
+}
+.price-new {
+  color: black;
+  text-align: right;
+  font-size: 20px;
+}
+.price-store {
+  font-size: 15px;
+
+  text-align: right;
+}
+.gap {
+  margin: 0;
+  /* background: black; */
+  background: white;
+}
+/* .card{
+  margin: 0!important;
+} */
+
+.imgproduct {
+  width: 200px;
+  height: 175px;
+  display: block;
+  margin: auto;
+}
+
+.line {
+  display: inline;
+}
+
+.Solid {
+  color: goldenrod;
+}
+
+.Solid1 {
+  font-size: 20px;
+  color: green;
+}

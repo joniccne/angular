@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-lg-3 col-md-3 gap" *ngFor="let itemsp of BestPrice ">
+    <div class="card">
+      <div class="card-body">
+        <div style="height: 30vh;">
+          <img class=" imgproduct" (click)="onClicks(itemsp[0].keyid,itemsp[0].img)" src={{itemsp[0].img}} alt="Card image cap">
+        </div>
+        <h6 class="Sname">
+          <strong>{{itemsp[0].name}}</strong>
+        </h6>
+        <h5 class=" Sprice">
+          <strong (click)="onClicks(itemsp[0].keyid)">
+            <i class="fa fa-money-bill Solid1"></i> {{itemsp[0].price}}</strong>
+        </h5>
+        <h5 (click)="onClicks(itemsp[0].keyid,itemsp[0].img)" class=" Sstore">
+          <img src={{itemsp[0].store}}>
+        </h5>
+        <div (click)="onClicks(itemsp[0].keyid,itemsp[0].img)" class="line">
+          <h5 class="Sleng">
+            <!-- <img src="../../../assets/images/shop.jpg"> -->
+            <strong>จำนวนร้าน{{itemsp[0].leng}}</strong>
+            <img *ngIf="itemsp[0].leng >=2 " class="imgpriceStore" src="../../../assets/images/sela.jpg">
+            <strong *ngIf="itemsp[0].leng >=2 " class="SpriceStore"> {{itemsp[0].priceStore}}</strong>
+          </h5>
+        </div>
+        <button *ngIf="State && pnames[0].keyid == itemsp[0].keyid" class="btn btn-outline-danger btn-block" (click)="clearState()">
+          <i class="fa fa-angle-double-up "></i>
+        </button>
+        <div *ngIf="State && pnames[0].keyid == itemsp[0].keyid">
+          <form>
+            <table class="table">
+              <tbody *ngFor="let product of pnames">
+                <tr>
+                  <td>
+                    <h4>
+                      <img class="price" src={{product.store}}>
+                    </h4>
+                  </td>
+                  <td class="price-new">
+                    <strong>
+                      <i class="fa fa-money-bill Solid"></i> {{product.price}}</strong>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+          <!-- <button *ngIf="State && pnames[0].keyid == itemsp[0].keyid" class="btn btn-outline-danger btn-block" (click)="clearState()"> <i class="fa fa-angle-double-up "></i></button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

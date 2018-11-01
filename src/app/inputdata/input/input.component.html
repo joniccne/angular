@@ -1,0 +1,308 @@
+<div class="col">
+    <div ngbDropdown class="d-inline-block"> 
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button class="dropdown-item" (click)="getGlobalAir()">Air global</button>
+        <button class="dropdown-item" (click)="getPowerbuyAir()">Air Power</button>
+        <button class="dropdown-item" (click)="getGlobalfan()">fan global</button>
+        <button class="dropdown-item" (click)="getPowerbuyfan()">fan Powerbuy</button>
+        <button class="dropdown-item" (click)="getGlobalonedoorrefrigerators()">ตู่เย็น 1 ประตู global</button>
+        <button class="dropdown-item" (click)="getPowerbuyonedoorrefrigerators()">ตู่เย็น 1 ประตู Powerbuy</button>
+        <button class="dropdown-item" (click)="getGlobaltwodoorrefrigerators()">ตู่เย็น 2 ประตู global</button>
+        <button class="dropdown-item" (click)="getPowerbuytwodoorrefrigerators()">ตู่เย็น 2 ประตู Powerbuy</button>
+        <button class="dropdown-item" (click)="getGlobalwaterheaters()">เครื่องทำน้ำอุ่น global</button>
+        <button class="dropdown-item" (click)="getPowerbuywaterheaters()">เครื่องทำน้ำอุ่น Powerbuy</button>
+        <button class="dropdown-item" (click)="getGlobalwashingmachines()">เครื่องซักผ้า ฝาหน้า global</button>
+        <button class="dropdown-item" (click)="getPowerbuywashingmachines()">ครื่องซักผ้า ฝาหน้า Powerbuy</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div ngbDropdown class="d-inline-block"> 
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Updata</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button class="dropdown-item" (click)="upGlobalAir()">Air global</button>
+         <button class="dropdown-item" (click)="upPowerbuyAir()">Air Power</button>
+      <!--  <button class="dropdown-item" (click)="getGlobalfan()">fan global</button>
+        <button class="dropdown-item" (click)="getPowerbuyfan()">fan Powerbuy</button>
+        <button class="dropdown-item" (click)="getGlobalonedoorrefrigerators()">ตู่เย็น 1 ประตู global</button>
+        <button class="dropdown-item" (click)="getPowerbuyonedoorrefrigerators()">ตู่เย็น 1 ประตู Powerbuy</button>
+        <button class="dropdown-item" (click)="getGlobaltwodoorrefrigerators()">ตู่เย็น 2 ประตู global</button>
+        <button class="dropdown-item" (click)="getPowerbuytwodoorrefrigerators()">ตู่เย็น 2 ประตู Powerbuy</button>
+        <button class="dropdown-item" (click)="getGlobalwaterheaters()">เครื่องทำน้ำอุ่น global</button>
+        <button class="dropdown-item" (click)="getPowerbuywaterheaters()">เครื่องทำน้ำอุ่น Powerbuy</button>
+        <button class="dropdown-item" (click)="getGlobalwashingmachines()">เครื่องซักผ้า ฝาหน้า global</button>
+        <button class="dropdown-item" (click)="getPowerbuywashingmachines()">ครื่องซักผ้า ฝาหน้า Powerbuy</button> -->
+      </div>
+    </div>
+  </div>
+
+<br> <button *ngIf="inputAir != null"  type="button" (click)="ungetAir()" class="btn btn-danger" >Cancel</button>
+<table  class="table table-dark table-hover" *ngIf="inputAir != null">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <!-- <th>Store</th> -->
+        <th>KeyID</th>
+        <th>Submit</th>
+      </tr>
+    </thead>
+ 
+    <tbody *ngFor="let item of inputAir; let i = index " >
+      <tr *ngIf="item.submit == 0 " >
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <!-- <td>{{item.store}}</td> -->
+        <td><input type="text" placeholder="Add KeyID" [(ngModel)]="item.keyid" name="keyid"  ></td>
+        <td><input type="submit" value="Submit" (click)="addAir(i,item.keyid)"  class="btn"></td>
+      </tr>
+    </tbody>
+</table>
+
+<br> <button *ngIf="inputFans != null"  type="button" (click)="ungetFan()" class="btn btn-danger" >Cancel</button>
+<table  class="table table-dark table-hover" *ngIf="inputFans != null">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Store</th>
+        <th>KeyID</th>
+        <th>Submit</th>
+      </tr>
+    </thead>
+ 
+    <tbody *ngFor="let item of inputFans; let i = index " >
+      <tr *ngIf="item.submit == 0 " >
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.store}}</td>
+        <td><input type="text" placeholder="Add KeyID" [(ngModel)]="item.keyid" name="keyid"  ></td>
+        <td><input type="submit" value="Submit" (click)="addFan(i,item.keyid)"  class="btn"></td>
+      </tr>
+    </tbody>
+</table>
+
+<br> <button *ngIf="inputOnedoorrefrigerators != null"  type="button" (click)="ungetOnedoorrefrigerators()" class="btn btn-danger" >Cancel</button>
+<table  class="table table-dark table-hover" *ngIf="inputOnedoorrefrigerators != null">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Store</th>
+        <th>KeyID</th>
+        <th>Submit</th>
+      </tr>
+    </thead>
+ 
+    <tbody *ngFor="let item of inputOnedoorrefrigerators; let i = index " >
+      <tr *ngIf="item.submit == 0 " >
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.store}}</td>
+        <td><input type="text" placeholder="Add KeyID" [(ngModel)]="item.keyid" name="keyid"  ></td>
+        <td><input type="submit" value="Submit" (click)="addOnedoorrefrigerators(i,item.keyid)"  class="btn"></td>
+      </tr>
+    </tbody>
+</table>
+
+<br> <button *ngIf=" inputTwodoorrefrigerators != null"  type="button" (click)="ungetTwodoorrefrigerators()" class="btn btn-danger" >Cancel</button>
+<table  class="table table-dark table-hover" *ngIf="inputTwodoorrefrigerators != null">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Store</th>
+        <th>KeyID</th>
+        <th>Submit</th>
+      </tr>
+    </thead>
+ 
+    <tbody *ngFor="let item of inputTwodoorrefrigerators; let i = index " >
+      <tr *ngIf="item.submit == 0 " >
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.store}}</td>
+        <td><input type="text" placeholder="Add KeyID" [(ngModel)]="item.keyid" name="keyid"  ></td>
+        <td><input type="submit" value="Submit" (click)="addTwodoorrefrigerators(i,item.keyid)"  class="btn"></td>
+      </tr>
+    </tbody>
+</table>
+
+<br> <button *ngIf=" inputWaterheaters != null"  type="button" (click)="ungetWaterheaters()" class="btn btn-danger" >Cancel</button>
+<table  class="table table-dark table-hover" *ngIf="inputWaterheaters != null">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Store</th>
+        <th>KeyID</th>
+        <th>Submit</th>
+      </tr>
+    </thead>
+ 
+    <tbody *ngFor="let item of inputWaterheaters; let i = index " >
+      <tr *ngIf="item.submit == 0 " >
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.store}}</td>
+        <td><input type="text" placeholder="Add KeyID" [(ngModel)]="item.keyid" name="keyid"  ></td>
+        <td><input type="submit" value="Submit" (click)="addWaterheaters(i,item.keyid)"  class="btn"></td>
+      </tr>
+    </tbody>
+</table>
+
+<br> <button *ngIf=" inputWashingmachines!= null"  type="button" (click)="ungetWaterheaters()" class="btn btn-danger" >Cancel</button>
+<table  class="table table-dark table-hover" *ngIf="inputWashingmachines != null">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Store</th>
+        <th>KeyID</th>
+        <th>Submit</th>
+      </tr>
+    </thead>
+ 
+    <tbody *ngFor="let item of inputWashingmachines; let i = index " >
+      <tr *ngIf="item.submit == 0 " >
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.store}}</td>
+        <td><input type="text" placeholder="Add KeyID" [(ngModel)]="item.keyid" name="keyid"  ></td>
+        <td><input type="submit" value="Submit" (click)="addWashingmachines(i,item.keyid)"  class="btn"></td>
+      </tr>
+    </tbody>
+</table>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+
+<!-- <br> <button *ngIf="inputupAir != null"  type="button" (click)="ungetupAir()" class="btn btn-danger" >Cancel</button>
+<table  class="table table-dark table-hover" *ngIf="inputupAir!= null">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Submit</th>
+      </tr>
+    </thead>
+ 
+    <tbody *ngFor="let item of inputupAir " >
+      <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        
+        
+        <td><input type="submit" value="Submit" (click)="updates(item)"  class="btn"></td>
+      </tr>
+    </tbody>
+</table>
+
+
+<table  class="table" *ngIf="pnames != null" >
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Submit</th>
+      </tr>
+    </thead>
+ 
+    <tbody *ngFor="let ninew of itemid  " >
+      <tr>
+          <td>{{ninew.id}}</td>
+          <td>{{ninew.name}}</td>
+          <td>{{ninew.price}}</td>
+          <td><input type="submit" value="Submit" (click)="update(ninew)"  class="btn"></td>
+        
+        
+      </tr>
+    </tbody>
+</table> -->
+
+
+<!-- _______________________________________________________________________________________ -->
+
+
+
+
+
+
+<!-- <button *ngIf="inputupAir != null"  type="button" (click)="ungetupAir()" class="btn btn-danger" >Cancel</button>
+
+
+
+<div *ngIf="inputupAir != null">
+<table  class="table table-dark table-hover" *ngIf="inputupAir!= null" >
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of inputupAir " >
+      <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+      </tr>
+      <input type="submit" value="Submit" (click)="updates(item)"  class="btn">
+     
+    </tbody>
+</table>
+ <form >
+          <table  class="table table-dark table-hover" *ngIf="pnames != null" >
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Submit</th>
+                </tr>
+              </thead>           
+              <tbody *ngFor="let ninew of itemid  " >
+                <tr>
+                    <td>{{ninew.id}}</td>
+                    <td>{{ninew.name}}</td>
+                    <td>{{ninew.price}}</td>
+                    <td><input type="submit" value="Submit" (click)="update(ninew)"  class="btn"></td>                  
+                </tr>
+              </tbody>
+          </table>
+          </form>
+</div> -->
+
+<div class="row">
+<div class="col-lg3 col-md-3 " *ngFor="let item of inputupAir">
+  <div class="card">
+    <div class="card-body">
+      <h6> <strong>{{item.name}}</strong> </h6>
+        <h5> <strong> {{item.price}} </strong></h5>
+        <button  class="btn btn-outline-danger btn-block" (click)="updates(item)" >EditData </button>
+        <button *ngIf="State && itemid != null" class="btn btn-outline-danger btn-block" (click)="clearState()">
+            <i class="fa fa-angle-double-up "></i>
+        </button>
+        <div *ngIf="State && itemid != null">
+          <form>
+              <table  class="table">
+                  <tbody *ngFor="let ninew of itemid  " >
+                    <tr>
+                        <!-- <td>{{ninew.id}}</td>
+                        <td>{{ninew.name}}</td> -->
+                        <td>{{ninew.price}}</td>
+                        <td><input type="submit" value="Submit" (click)="update(ninew)"  class="btn"></td>                  
+                    </tr>
+                  </tbody>
+              </table>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
